@@ -19,12 +19,12 @@
             </Picker>
 
             <Entry Placeholder="Dirección" x:Name="DireccionEntry2" Text="{Binding Direccion, Mode=TwoWay}"/>
-            <Image x:Name="ImagenPreview2" HeightRequest="150" />
+            <Image x:Name="ImagenPreview2" HeightRequest="150" Source="{Binding RutaImagenFileUri, Mode=TwoWay}" />
             <ProgressBar x:Name="progressBar2"></ProgressBar>
             <Label x:Name="lbRutaImagenFile2" Text="{Binding RutaImagenFileUri, Mode=TwoWay}"></Label>
             <Button x:Name="Tomarfoto2" Text="Tomar foto" Clicked="Tomarfoto2_Clicked"></Button>
 
-            <Button x:Name="btnactualizar" Text="Actualizar" Command="{Binding insertCommand, Mode=TwoWay}" />
+            <Button x:Name="btnactualizar" Text="Actualizar" Command="{Binding UpdateCommand, Mode=TwoWay}" />
             <Button x:Name="Eliminar" Text="Eliminar" Clicked="Eliminar_Clicked" />
         </StackLayout>
     </ContentPage.Content>

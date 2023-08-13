@@ -94,6 +94,15 @@ namespace PM2Ejercicio3_1.ViewModels
             }
 
         }
+        public ICommand DeleteCommand
+        {
+            get
+            {
+                return new RelayCommand(DeleteMethod);
+
+            }
+
+        }
 
 
         private async void UpdateMethod()
