@@ -20,7 +20,7 @@
 
             <Entry Placeholder="Dirección" x:Name="DireccionEntry" />
 
-            <Button Text="Seleccionar Imagen" Clicked="SeleccionarImagen_Clicked" />
+            <Button Text="Tomar foto" Clicked="SeleccionarImagen_Clicked" />
             <Image x:Name="ImagenPreview" HeightRequest="150" />
 
             <Button Text="Guardar" Clicked="Guardar_Clicked" />
