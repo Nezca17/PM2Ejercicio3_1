@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PM2Ejercicio3_1.Views.ListaAlumnos"
->
+             x:Class="PM2Ejercicio3_1.Views.ListaAlumnos">
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="AlumnosListView" 
@@ -14,23 +13,25 @@
 
                             <Grid>
                                 <Grid.RowDefinitions>
-
-                                    <RowDefinition Height="50"></RowDefinition>
-                                    <RowDefinition Height="20"></RowDefinition>
-                                    <RowDefinition Height="20"></RowDefinition>
-                                    <RowDefinition Height="20"></RowDefinition>
-                                    
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
                                 </Grid.RowDefinitions>
 
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="10"></ColumnDefinition>
-                                    <ColumnDefinition Width="50"></ColumnDefinition>
-                                    <ColumnDefinition Width="20"></ColumnDefinition>
-                                    <ColumnDefinition Width="20"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="1" Source="{Binding RutaImagenFileUri}" />
-                                <Label Grid.Column="2" Text="{Binding Nombres}"  FontSize="Large"/>
-                                <Label Grid.Column="3" Text="{Binding Direccion}" />
+
+                                <Image Grid.RowSpan="4" Grid.Column="0" Source="{Binding RutaImagenFileUri}" 
+                                       WidthRequest="50" HeightRequest="50" Margin="5"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Nombres}" FontSize="Large"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Direccion}" />
+                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding OtroDato}" />
+                                <Label Grid.Row="3" Grid.Column="1" Text="{Binding OtroDato2}" />
 
                             </Grid>
                         </ViewCell>
