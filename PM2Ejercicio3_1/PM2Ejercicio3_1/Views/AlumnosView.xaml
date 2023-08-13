@@ -21,9 +21,8 @@
             </Picker>
 
             <Entry Placeholder="Dirección" x:Name="DireccionEntry" Text="{Binding Direccion, Mode=TwoWay}"/>
-
-            <Button x:Name="btnActualiarImagen" Text="Seleccionar Imagen"  Clicked="btnActualiarImagen_Clicked"/>
             <Image x:Name="ImagenPreview" HeightRequest="150" />
+            <Button x:Name="Tomarfoto" Text="Tomar foto" Clicked="SeleccionarImagen_ClickedAsync"></Button>
 
             <Button x:Name="btnGuardar" Text="Guardar" Command="{Binding insertCommand, Mode=TwoWay}" />
         </StackLayout>

@@ -13,9 +13,8 @@ namespace PM2Ejercicio3_1.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AlumnosView : ContentPage
     {
-        public AlumnosView()
         private string photoPath;
-        public Alumnos()
+        public AlumnosView()
         {
             InitializeComponent();
             BindingContext = new AlumnosViewModel();
