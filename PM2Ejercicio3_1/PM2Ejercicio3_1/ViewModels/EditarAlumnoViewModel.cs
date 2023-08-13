@@ -112,6 +112,7 @@ namespace PM2Ejercicio3_1.ViewModels
               
                 var Alumno = new Alumnos
                 {
+                    Id = Id,
                     Nombres = Nombres,
                     Apellidos = Apellidos,
                     Sexo = Sexo,
@@ -121,7 +122,8 @@ namespace PM2Ejercicio3_1.ViewModels
                 await _firebaseHelper.UpdateAlumno(Alumno);
 
 
-
+                await App.Current.MainPage.DisplayAlert("aviso","Actualizado","ok");
+                await App.Current.MainPage.Navigation.PushAsync(new ListaAlumnos());
             }
             catch (Exception ex)
             {
@@ -135,6 +137,8 @@ namespace PM2Ejercicio3_1.ViewModels
         {
 
             await _firebaseHelper.DeleteNota(Id);
+
+            await App.Current.MainPage.DisplayAlert("aviso", "Eliminado", "ok");
             await App.Current.MainPage.Navigation.PushAsync(new ListaAlumnos());
         }
 

@@ -119,6 +119,8 @@ namespace PM2Ejercicio3_1.ViewModels
 
 
                 await _firebaseHelper.AddAlumnos(alumno);
+
+
             }
             catch (Exception ex)
             {
