@@ -23,8 +23,7 @@
 
   <ItemGroup>
     <Folder Include="interfaces\" />
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
+    <Folder Include="Converters\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
   </ItemGroup>
