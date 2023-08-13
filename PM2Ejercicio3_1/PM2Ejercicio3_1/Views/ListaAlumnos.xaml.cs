@@ -1,4 +1,5 @@
-﻿using PM2Ejercicio3_1.ViewModels;
+﻿using PM2Ejercicio3_1.Models;
+using PM2Ejercicio3_1.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,12 @@ namespace PM2Ejercicio3_1.Views
             BindingContext = new ListaAlumnosViewModel();
         }
 
-
+        private async void AlumnosListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem is Alumnos selectedItem)
+            {
+                await Navigation.PushAsync(new EditarView(selectedItem));
+            }
+        }
     }
 }

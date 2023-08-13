@@ -142,7 +142,10 @@ namespace PM2Ejercicio3_1.ViewModels
             RutaImagenFile = alumno.RutaImagenFile;
 
         }
+        public EditarAlumnoViewModel()
+        {
 
+        }
 
         #endregion
     }

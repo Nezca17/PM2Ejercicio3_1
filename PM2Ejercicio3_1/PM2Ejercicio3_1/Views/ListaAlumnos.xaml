@@ -6,7 +6,10 @@
         <StackLayout>
             <ListView x:Name="AlumnosListView" 
                       ItemsSource="{Binding ListViewSource}" 
-                      IsRefreshing="{Binding IsRefreshing}">
+                      IsRefreshing="{Binding IsRefreshing}
+                    "
+                      ItemSelected="AlumnosListView_ItemSelected">
+                
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

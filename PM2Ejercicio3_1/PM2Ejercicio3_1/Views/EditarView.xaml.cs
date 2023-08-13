@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PM2Ejercicio3_1.Models;
+using PM2Ejercicio3_1.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,13 @@ namespace PM2Ejercicio3_1.Views
         public EditarView()
         {
             InitializeComponent();
+            BindingContext = new EditarAlumnoViewModel();
+        }
+
+        public EditarView(Alumnos _alumno)
+        {
+            InitializeComponent();
+            BindingContext = new EditarAlumnoViewModel(_alumno);
         }
 
         private void Eliminar_Clicked(object sender, EventArgs e)
