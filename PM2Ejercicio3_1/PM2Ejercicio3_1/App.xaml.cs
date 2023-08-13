@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PM2Ejercicio3_1.Models;
+using PM2Ejercicio3_1.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +12,7 @@ namespace PM2Ejercicio3_1
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new AlumnosView());
         }
 
         protected override void OnStart()
