@@ -28,7 +28,7 @@
                                     <ColumnDefinition Width="20"></ColumnDefinition>
                                     <ColumnDefinition Width="20"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="1" Source="" />
+                                <Image Grid.Column="1" Source="{Binding RutaImagenFileUri}" />
                                 <Label Grid.Column="2" Text="{Binding Nombres}"  FontSize="Large"/>
                                 <Label Grid.Column="3" Text="{Binding Direccion}" />
 
