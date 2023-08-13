@@ -4,6 +4,7 @@
              x:Class="PM2Ejercicio3_1.Views.EditarView">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="{Binding Id, Mode=TwoWay}" IsVisible="false"></Label>
             <Label Text="Ingrese los datos del alumno:" 
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand" />
