@@ -65,7 +65,7 @@ namespace PM2Ejercicio3_1.Services
 
         }
 
-        public async Task UpdateNota(Alumnos _alumnos)
+        public async Task UpdateAlumno(Alumnos _alumnos)
         {
 
             var toUpdateNota = (await firebase.Child("Alumnos")
