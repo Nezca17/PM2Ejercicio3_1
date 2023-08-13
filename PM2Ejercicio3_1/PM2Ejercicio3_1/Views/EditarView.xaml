@@ -25,7 +25,7 @@
             <Button x:Name="Tomarfoto2" Text="Tomar foto" Clicked="Tomarfoto2_Clicked"></Button>
 
             <Button x:Name="btnactualizar" Text="Actualizar" Command="{Binding UpdateCommand, Mode=TwoWay}" />
-            <Button x:Name="Eliminar" Text="Eliminar" Command="" Clicked="Eliminar_Clicked" />
+            <Button x:Name="Eliminar" Text="Eliminar" Command="{Binding DeleteCommand}" Clicked="Eliminar_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
