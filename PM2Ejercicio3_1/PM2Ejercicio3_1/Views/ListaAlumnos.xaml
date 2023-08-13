@@ -15,7 +15,7 @@
                             <Grid>
                                 <Grid.RowDefinitions>
 
-                                    <RowDefinition Height="20"></RowDefinition>
+                                    <RowDefinition Height="50"></RowDefinition>
                                     <RowDefinition Height="20"></RowDefinition>
                                     <RowDefinition Height="20"></RowDefinition>
                                     <RowDefinition Height="20"></RowDefinition>
@@ -23,13 +23,13 @@
                                 </Grid.RowDefinitions>
 
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="20"></ColumnDefinition>
-                                    <ColumnDefinition Width="20"></ColumnDefinition>
+                                    <ColumnDefinition Width="10"></ColumnDefinition>
+                                    <ColumnDefinition Width="50"></ColumnDefinition>
                                     <ColumnDefinition Width="20"></ColumnDefinition>
                                     <ColumnDefinition Width="20"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="1" Source="" HeightRequest="100" />
-                                <Label Grid.Column="2" Text="{Binding Nombres}" />
+                                <Image Grid.Column="1" Source="" />
+                                <Label Grid.Column="2" Text="{Binding Nombres}"  FontSize="Large"/>
                                 <Label Grid.Column="3" Text="{Binding Direccion}" />
 
                             </Grid>
