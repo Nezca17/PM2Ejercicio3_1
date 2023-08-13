@@ -40,6 +40,15 @@ namespace PM2Ejercicio3_1.Views
             {
                 await DisplayAlert("Error", $"No se pudo tomar la foto: {ex.Message}", "OK");
             }
+    
+        private void btnActualiarImagen_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVerLista_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ListaAlumnos());
         }
     }
 }

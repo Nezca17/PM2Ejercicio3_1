@@ -25,6 +25,7 @@
             <Button x:Name="Tomarfoto" Text="Tomar foto" Clicked="SeleccionarImagen_ClickedAsync"></Button>
 
             <Button x:Name="btnGuardar" Text="Guardar" Command="{Binding insertCommand, Mode=TwoWay}" />
+            <Button x:Name="btnVerLista" Text="Ver Lista" Clicked="btnVerLista_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
