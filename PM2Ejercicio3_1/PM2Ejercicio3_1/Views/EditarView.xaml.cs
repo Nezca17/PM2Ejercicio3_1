@@ -16,5 +16,15 @@ namespace PM2Ejercicio3_1.Views
         {
             InitializeComponent();
         }
+
+        private void Eliminar_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tomarfoto2_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

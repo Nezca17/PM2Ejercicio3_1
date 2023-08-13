@@ -4,9 +4,28 @@
              x:Class="PM2Ejercicio3_1.Views.EditarView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Ingrese los datos del alumno:" 
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Entry Placeholder="Nombres2" x:Name="NombresEntry2" Text="{Binding Nombres, Mode=TwoWay}"/>
+            <Entry Placeholder="Apellidos2" x:Name="ApellidosEntry2" Text="{Binding Apellidos, Mode=TwoWay}"/>
+
+            <Picker Title="Seleccione el sexo" x:Name="SexoPicker2" SelectedItem="{Binding Sexo, Mode=TwoWay}" >
+                <Picker.Items>
+                    <x:String>Masculino</x:String>
+                    <x:String>Femenino</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Entry Placeholder="Dirección" x:Name="DireccionEntry2" Text="{Binding Direccion, Mode=TwoWay}"/>
+            <Image x:Name="ImagenPreview2" HeightRequest="150" />
+            <ProgressBar x:Name="progressBar2"></ProgressBar>
+            <Label x:Name="lbRutaImagenFile2" Text="{Binding RutaImagenFile, Mode=TwoWay}"></Label>
+            <Button x:Name="Tomarfoto2" Text="Tomar foto" Clicked="Tomarfoto2_Clicked"></Button>
+
+            <Button x:Name="btnactualizar" Text="Actualizar" Command="{Binding insertCommand, Mode=TwoWay}" />
+            <Button x:Name="Eliminar" Text="Eliminar" Clicked="Eliminar_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
