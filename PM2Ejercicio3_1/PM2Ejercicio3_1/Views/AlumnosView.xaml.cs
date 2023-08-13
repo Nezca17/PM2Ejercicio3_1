@@ -18,8 +18,9 @@ namespace PM2Ejercicio3_1.Views
     public partial class AlumnosView : ContentPage
     {
 
-        private string photoPath;
-     //   private MediaFile photo;
+      //  private string photoPath;
+        private MediaFile photo;
+        private string filePath;
         public AlumnosView()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace PM2Ejercicio3_1.Views
         {
             try
             {
-                var photo = await MediaPicker.CapturePhotoAsync();
+              /*  var photo = await MediaPicker.CapturePhotoAsync();
 
                 if (photo != null)
                 {
@@ -45,7 +46,42 @@ namespace PM2Ejercicio3_1.Views
                         await stream.CopyToAsync(newStream);
 
                     await DisplayAlert("Foto tomada", "La foto ha sido tomada y guardada localmente.", "OK");
+                }*/
+
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                {
+                    await DisplayAlert("Error", "La cámara no está disponible.", "OK");
+                    return;
                 }
+
+                // Solicitar permisos para acceder a la cámara
+                var status = await CrossMedia.Current.Initialize();
+                if (!status)
+                {
+                    await DisplayAlert("Permiso denegado", "No se ha otorgado el permiso para acceder a la cámara.", "OK");
+                    return;
+                }
+
+                // Tomar una foto
+                photo = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                {
+                    Directory = "CapturedPhotos",
+                    Name = "capturedImage.jpg",
+                    SaveToAlbum = true // Guardar la foto en el álbum de fotos del dispositivo (opcional)
+                });
+
+                if (photo != null)
+                {
+                    // Obtener la ruta de la foto capturada
+                    filePath = photo.Path;
+
+                    ImagenPreview.Source = ImageSource.FromFile(filePath);
+
+                }
+                var stream = photo.GetStream();
+
+                
+                lbRutaImagenFile.Text = await TomarFoto(stream, photo.OriginalFilename);
             }
             catch (Exception ex)
             {
