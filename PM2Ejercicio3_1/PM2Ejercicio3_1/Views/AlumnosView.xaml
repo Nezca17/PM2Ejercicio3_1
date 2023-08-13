@@ -23,7 +23,7 @@
             <Entry Placeholder="Dirección" x:Name="DireccionEntry" Text="{Binding Direccion, Mode=TwoWay}"/>
             <Image x:Name="ImagenPreview" HeightRequest="150" />
             <ProgressBar x:Name="progressBar"></ProgressBar>
-            <Label x:Name="lbRutaImagenFile" Text=""></Label>
+            <Label x:Name="lbRutaImagenFile" Text="{Binding RutaImagenFile, Mode=TwoWay}"></Label>
             <Button x:Name="Tomarfoto" Text="Tomar foto" Clicked="SeleccionarImagen_ClickedAsync"></Button>
 
             <Button x:Name="btnGuardar" Text="Guardar" Command="{Binding insertCommand, Mode=TwoWay}" />

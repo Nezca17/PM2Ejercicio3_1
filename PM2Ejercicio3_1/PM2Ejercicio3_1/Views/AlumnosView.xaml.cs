@@ -35,7 +35,7 @@ namespace PM2Ejercicio3_1.Views
         {
             try
             {
-
+                btnGuardar.IsEnabled = false;
                 if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
                     await DisplayAlert("Error", "La cámara no está disponible.", "OK");
@@ -70,6 +70,7 @@ namespace PM2Ejercicio3_1.Views
 
                 
                 lbRutaImagenFile.Text = await TomarFoto(stream, photo.OriginalFilename);
+                btnGuardar.IsEnabled = true;
             }
             catch (Exception ex)
             {
@@ -97,7 +98,6 @@ namespace PM2Ejercicio3_1.Views
                         ThrowOnCancel = true
 
                     }).Child("Alumnos")
-                    .Child(NombresEntry.Text)
                     .Child(nombre)
                     .PutAsync(photo);
 

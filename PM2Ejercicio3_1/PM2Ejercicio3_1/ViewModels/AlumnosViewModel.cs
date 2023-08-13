@@ -97,7 +97,7 @@ namespace PM2Ejercicio3_1.ViewModels
                     Apellidos = Apellidos,
                     Sexo = Sexo,
                     Direccion = Direccion,
-                    RutaImagenFile = "prueba"
+                    RutaImagenFile = RutaImagenFile
 
                 };
 
