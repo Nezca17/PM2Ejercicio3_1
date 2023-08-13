@@ -36,6 +36,22 @@ namespace PM2Ejercicio3_1.Views
             /*
             try
             {
+                btnGuardar.IsEnabled = false;
+                // Verificar si se otorgó el permiso de cámara
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                {
+                    await DisplayAlert("Error", "La cámara no está disponible.", "OK");
+                    return;
+                }
+
+                // Solicitar permisos para acceder a la cámara
+                var status = await CrossMedia.Current.Initialize();
+                if (!status)
+                {
+                    await DisplayAlert("Permiso denegado", "No se ha otorgado el permiso para acceder a la cámara.", "OK");
+                    return;
+                }
+
                 // Tomar una foto
                 photo = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
                 {
@@ -49,16 +65,19 @@ namespace PM2Ejercicio3_1.Views
                     // Obtener la ruta de la foto capturada
                     filePath = photo.Path;
 
-                    ImagenPreview.Source = ImageSource.FromFile(filePath);
+                    imageField.Source = ImageSource.FromFile(filePath);
 
                 }
                 var stream = photo.GetStream();
-                lbRutaImagenFile.Text = await TomarFoto(photo.)
 
+                //  NotasViewModel.StreamFoto = stream;
+                lbRutaFirebase.Text = await TomarFoto(stream, photo.OriginalFilename);
+                btnGuardar.IsEnabled = true;
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", $"No se pudo tomar la foto: {ex.Message}", "OK");
+                // Manejar cualquier excepción que pueda ocurrir
+                await DisplayAlert("Error", $"Ha ocurrido un error: {ex.Message}", "OK");
             }
 
             */
