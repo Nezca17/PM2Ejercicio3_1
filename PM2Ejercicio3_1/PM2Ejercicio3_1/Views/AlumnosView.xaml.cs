@@ -19,19 +19,15 @@ namespace PM2Ejercicio3_1.Views
             BindingContext = new AlumnosViewModel();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button_Clicked_1(object sender, EventArgs e)
-        {
-
-        }
-
+    
         private void btnActualiarImagen_Clicked(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVerLista_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ListaAlumnos());
         }
     }
 }

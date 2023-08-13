@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PM2Ejercicio3_1.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace PM2Ejercicio3_1.Views
         public ListaAlumnos()
         {
             InitializeComponent();
+            BindingContext = new ListaAlumnosViewModel();
         }
 
         private void Button_Clicked_1(object sender, EventArgs e)
