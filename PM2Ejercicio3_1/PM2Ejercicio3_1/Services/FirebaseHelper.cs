@@ -28,7 +28,7 @@ namespace PM2Ejercicio3_1.Services
         public async Task<List<Alumnos>> GetAlumnos()
         {
             var queryResult = await firebase
-             .Child("Alumnoss")
+             .Child("Alumnos")
              .OnceAsync<Alumnos>();
 
             var Alumnos = queryResult
@@ -50,7 +50,7 @@ namespace PM2Ejercicio3_1.Services
 
         public async Task AddAlumnos(Alumnos _alumnos)
         {
-            await firebase.Child("Notas").PostAsync(new Alumnos()
+            await firebase.Child("Alumnos").PostAsync(new Alumnos()
             {
 
                 Id = Guid.NewGuid(),
@@ -68,10 +68,10 @@ namespace PM2Ejercicio3_1.Services
         public async Task UpdateNota(Alumnos _alumnos)
         {
 
-            var toUpdateNota = (await firebase.Child("Notas")
+            var toUpdateNota = (await firebase.Child("Alumnos")
                 .OnceAsync<Alumnos>()).Where(a => a.Object.Id == _alumnos.Id).FirstOrDefault();
 
-            await firebase.Child("Notas")
+            await firebase.Child("Alumnos")
                 .Child(toUpdateNota.Key)
                 .PutAsync(new Alumnos()
                 {
