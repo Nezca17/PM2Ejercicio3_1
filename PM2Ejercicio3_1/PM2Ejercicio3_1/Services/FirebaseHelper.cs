@@ -40,7 +40,7 @@ namespace PM2Ejercicio3_1.Services
                     Sexo = item.Object.Sexo,
                     Direccion= item.Object.Direccion,
                     RutaImagenFile = item.Object.RutaImagenFile,
-                  //  RutaImagenFileUri = new Uri(item.Object.RutaImagenFile)
+                    RutaImagenFileUri = new Uri(item.Object.RutaImagenFile)
                 })
                 .ToList();
 
