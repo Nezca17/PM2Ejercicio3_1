@@ -32,55 +32,26 @@ namespace PM2Ejercicio3_1.Views
         }
         private async void SeleccionarImagen_ClickedAsync(object sender, EventArgs e)
         {
-
-            /*
             try
             {
-                btnGuardar.IsEnabled = false;
-                // Verificar si se otorgó el permiso de cámara
-                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-                {
-                    await DisplayAlert("Error", "La cámara no está disponible.", "OK");
-                    return;
-                }
-
-                // Solicitar permisos para acceder a la cámara
-                var status = await CrossMedia.Current.Initialize();
-                if (!status)
-                {
-                    await DisplayAlert("Permiso denegado", "No se ha otorgado el permiso para acceder a la cámara.", "OK");
-                    return;
-                }
-
-                // Tomar una foto
-                photo = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-                {
-                    Directory = "CapturedPhotos",
-                    Name = "capturedImage.jpg",
-                    SaveToAlbum = true // Guardar la foto en el álbum de fotos del dispositivo (opcional)
-                });
+                var photo = await MediaPicker.CapturePhotoAsync();
 
                 if (photo != null)
                 {
-                    // Obtener la ruta de la foto capturada
-                    filePath = photo.Path;
+                    // Guardar la foto localmente
+                    var fileName = Path.Combine(FileSystem.AppDataDirectory, $"{Guid.NewGuid()}.jpg");
+                    using (var stream = await photo.OpenReadAsync())
+                    using (var newStream = File.OpenWrite(fileName))
+                        await stream.CopyToAsync(newStream);
 
-                    imageField.Source = ImageSource.FromFile(filePath);
-
+                    await DisplayAlert("Foto tomada", "La foto ha sido tomada y guardada localmente.", "OK");
                 }
-                var stream = photo.GetStream();
-
-                //  NotasViewModel.StreamFoto = stream;
-                lbRutaFirebase.Text = await TomarFoto(stream, photo.OriginalFilename);
-                btnGuardar.IsEnabled = true;
             }
             catch (Exception ex)
             {
-                // Manejar cualquier excepción que pueda ocurrir
-                await DisplayAlert("Error", $"Ha ocurrido un error: {ex.Message}", "OK");
+                await DisplayAlert("Error", $"Error: {ex.Message}", "OK");
             }
 
-            */
 
         }
         private void btnVerLista_Clicked(object sender, EventArgs e)

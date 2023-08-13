@@ -1,6 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.pm2ejercicio3_1" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
+	<queries>
+		<!-- Agrega la acción para la captura de imágenes -->
+		<intent>
+			<action android:name="android.media.action.IMAGE_CAPTURE" />
+		</intent>
+	</queries>
+	<application android:networkSecurityConfig="@xml/network_security_config" android:label="PM2Ejercicio3_1.Android" android:theme="@style/MainTheme">
+		<provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.fileprovider" android:exported="false" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
+		</provider>
+		<provider android:name="androidx.core.content.FileProvider"
+          android:authorities="${applicationId}.fileprovider"
+          android:exported="false"
+          android:grantUriPermissions="true">
+
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+						   android:resource="@xml/file_paths"></meta-data>
+		</provider>
+	</application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
 	<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
@@ -10,17 +29,4 @@
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.CAMERA" />
-
-	<!-- Agrega la declaración de queries fuera del elemento <application> -->
-	<queries>
-		<intent>
-			<action android:name="android.media.action.IMAGE_CAPTURE" />
-		</intent>
-	</queries>
-
-	<application android:networkSecurityConfig="@xml/network_security_config" android:label="PM2Ejercicio3_1.Android" android:theme="@style/MainTheme">
-		<provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.fileprovider" android:exported="false" android:grantUriPermissions="true">
-			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
-		</provider>
-	</application>
 </manifest>
