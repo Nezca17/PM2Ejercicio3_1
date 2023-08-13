@@ -35,18 +35,6 @@ namespace PM2Ejercicio3_1.Views
         {
             try
             {
-              /*  var photo = await MediaPicker.CapturePhotoAsync();
-
-                if (photo != null)
-                {
-                    // Guardar la foto localmente
-                    var fileName = Path.Combine(FileSystem.AppDataDirectory, $"{Guid.NewGuid()}.jpg");
-                    using (var stream = await photo.OpenReadAsync())
-                    using (var newStream = File.OpenWrite(fileName))
-                        await stream.CopyToAsync(newStream);
-
-                    await DisplayAlert("Foto tomada", "La foto ha sido tomada y guardada localmente.", "OK");
-                }*/
 
                 if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
